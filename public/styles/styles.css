@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    color: #d1bf55;
+    background-color: white;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+
+topnav {
+    background-color: white;
+    overflow: hidden;
+}
+
+
+header{
+    text-align: center;
+    background-color: white;
+}
+
+body {
+    text-align: center;
+    background-color: white;
+}
