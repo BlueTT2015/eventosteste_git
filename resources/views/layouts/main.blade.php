@@ -9,8 +9,21 @@
 
 <body>
 <header>
-    <topnav><a href="/"><img src="/img/bambi_title.png" width="75" height="30" alt="bambi_img"></a>
-       @auth <a href="/events"> Eventos </a> | <a href="/events/create"> Adicionar Eventos @endauth </a> @guest| <a href="/login"> Login </a> | <a href="/register"> Registar </a> @endguest |  <a href="/contacts"> Contacts </a> </topnav>
+    <topnav>
+        <a href="/"><img src="/img/bambi_title.png" width="75" height="30" alt="bambi_img"></a>
+
+        @auth
+            <a href="/dashboard"> Dashboard </a> |
+            <a href="/events"> Eventos </a> |
+            <a href="/events/create"> Adicionar Eventos </a>
+        @endauth
+
+        @guest
+            | <a href="/login"> Login </a> | <a href="/register"> Registar </a>
+        @endguest
+
+        | <a href="/contacts"> Contacts </a>
+    </topnav>
 </header>
 
 @yield('content')
