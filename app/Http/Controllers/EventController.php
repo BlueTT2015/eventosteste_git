@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Event;
 
@@ -37,11 +38,23 @@ class EventController extends Controller
         $event->items = $request->input('items');
         $event->date = $request->input('date');
 
+        $user = auth()->user();
+        $event -> user_id = $user->id;
+
         $event->save();
-        return redirect('/events')->with('msg', 'Evento adicionado com sucesso!');
+        return redirect('/')->with('msg', 'Evento adicionado com sucesso!');
     }
     public function show($id){
         $event = Event::findOrFail($id);
-        return view('show', compact('event'));
+
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+        return view('show', ['event'=>$event, 'eventOwner'=>$eventOwner]);
+    }
+
+    public function dashboard(){
+        $user = auth()->user();
+        $events = $user->events;
+
+        return view('dashboard', ['events'=>$events]);
     }
 }

@@ -12,5 +12,7 @@
             <li> {{$item}} </li>
         @endforeach
     </ul>
+    <p><strong>Evento criado por: </strong> {{$eventOwner ['name']}}</p>
+
 
 @endsection

@@ -4,7 +4,7 @@
 <html>
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <h1> Página de Evemtos </h1>
+    <h1> Página de Eventos </h1>
         <h2> Crie e veja os seus eventos! </h2>
     <body>
 
