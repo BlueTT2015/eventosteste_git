@@ -34,4 +34,11 @@ Route::middleware([
 
     Route::post('/events', [EventController::class, 'store']);
 
+    Route::get('/edit/{id}', [EventController::class, 'edit'])
+    ->middleware('auth');
+
+    Route::delete('/events/{id}', [EventController::class, 'destroy']);
+
+    Route::put('/update/{id}', [EventController::class, 'update'])
+    ->middleware('auth');
 });

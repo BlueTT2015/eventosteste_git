@@ -35,3 +35,13 @@ body {
 .dashboard-events-container {
     width: 25%;
 }
+
+/* Edit Page */
+.img-preview {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.dashboard-events-container form {
+    display: inline-block;
+}

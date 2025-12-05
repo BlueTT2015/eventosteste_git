@@ -10,6 +10,8 @@ use PhpParser\Comment;
 class Event extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
     protected $casts = [
         'items' => 'array',
     ];
@@ -17,4 +19,5 @@ class Event extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
 }
